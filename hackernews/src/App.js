@@ -3,7 +3,7 @@ import './App.css';
 import List from './components/List';
 import Api from './components/Api';
 import Nav from './components/Nav'
-
+import Footer from './components/Footer'
 function App() {
 
   
@@ -15,7 +15,7 @@ function App() {
       <List news={news}/>
       
       <Api news={news} setNews={setNews} />
-     
+      <Footer />
 
     </div>
   );
