@@ -10,7 +10,7 @@ const Api = ({news, setNews}) => {
 
     useEffect(() => {
          
-         fetch("http://hn.algolia.com/api/v1/search?query=")
+         fetch("http://hn.algolia.com/api/v1/search?query=foo&tags=story")
            .then((response) => response.json())
            .then((json) => {
              console.log(json);

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import List from './components/List';
 import Api from './components/Api';
+import Nav from './components/Nav'
 
 function App() {
 
@@ -10,8 +11,11 @@ function App() {
   
   return (
     <div className="App">
-     <List news={news}/>
-     <Api news={news} setNews={setNews} />
+      <Nav/>
+      <List news={news}/>
+      
+      <Api news={news} setNews={setNews} />
+     
 
     </div>
   );
