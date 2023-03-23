@@ -15,7 +15,7 @@ function App() {
       <List news={news}/>
       
       <Api news={news} setNews={setNews} />
-      <Footer />
+      <Footer news={news} setNews={setNews} />
 
     </div>
   );

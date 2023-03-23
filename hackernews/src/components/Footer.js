@@ -1,6 +1,6 @@
 import React,{ useState, useEffect} from 'react'
 
-function Footer(){
+function Footer({news, setNews}){
 const[query, setQuery] = useState('')
 const[items,setItems] =useState('')
 const[largeTitle,setLargeTitle] = useState('')
@@ -11,6 +11,7 @@ useEffect(()=> {
         const res= await fetch(`https://hn.algolia.com/api/v1/search?query=${query}`)
         const data=await res.json()
         setItems(data.hits)
+        setNews(data.hits)
         setLargeTitle(data.hits[0])
     }
   
