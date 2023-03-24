@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function Footer({news, setNews, query,setQuery}) {
+function Footer({news, setNews, query,setQuery,matchExactly,setMatchExactly}) {
   // const [news, setNews] = useState([]);
   const [error, setError] = useState(null);
   useEffect(() => {
@@ -17,14 +17,16 @@ function Footer({news, setNews, query,setQuery}) {
     };
  
     if (query) {
-      fetchArticles();
+      fetchArticles(matchExactly);
+      
     }
   }, [query]);
-  
+
   const handleChange = (e) => {
     e.preventDefault();
-    setQuery(e.target.value);
+     setQuery(e.target.value);
   };
+
 
   return (
     <section className="footer">
@@ -32,7 +34,9 @@ function Footer({news, setNews, query,setQuery}) {
         <label>
           <strong>Search</strong>
           <input
+          checked={matchExactly}
             onChange={handleChange}
+        
             type="text"
             name="search"
             id="search"

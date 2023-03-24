@@ -20,13 +20,14 @@ function App() {
       <Nav/>
       <div className="isLoading"> 
       {isLoading && 
-            <CircularProgress color="secondary" />}
-            {!isLoading && 
-            <h3>Successfully API Loaded Data</h3>}
-      </div>
+            <CircularProgress color="secondary" /> 
+              
+            {!isLoading }
+             </div>
       
       <List news={news} query={query} />
-      <Api news={news} setNews={setNews} setIsLoading={setIsLoading} /><br></br>
+      <Api news={news} setNews={setNews} setIsLoading={setIsLoading}/>
+
       <Footer news={news} setNews={setNews}  query={query} setQuery={setQuery}/>
       
 
