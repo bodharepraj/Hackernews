@@ -21,11 +21,10 @@ function App() {
       {isLoading && 
             <CircularProgress color="secondary" />}
               
-            {!isLoading && 
-            <h3>Successfully API Loaded Data</h3>}
+            {!isLoading }
              </div>
       
-      <List news={news} query={query}/>
+      <List news={news} query={query} />
       <Api news={news} setNews={setNews} setIsLoading={setIsLoading}/>
       <Footer news={news} setNews={setNews}  query={query} setQuery={setQuery}/>
       

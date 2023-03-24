@@ -1,29 +1,35 @@
 import React from "react";
 import '../index.css';
 
+const List = ({news, query, matchExactly, setMatchExactly}) => {
+  const startTime = new Date().getTime();
+  console.log(query);
 
+  const highlight = (text, query) => {
+    if (!text) return "";
+    const regex = new RegExp(query, "gi");
+    return text.replace(regex, (match) => `<mark>${match}</mark>`);
+  };
 
-const List = ({news, query}) => {
-
-    const startTime = new Date().getTime();
-console.log(query);
-    return(
-        <div className="list">
-            <ol>
-                {news && news.hits.map(
-                hit =>  <li>
-
-                          <a  href={hit.url} >  {hit.title}</a>
-                             {/* <p>{hit.url}</p> */}
-                            <p>{hit.points} Points by {hit.author} {hit.created_at} </p>
-
-                        </li>
+  return (
+    <div className="list">
+      <ol>
+        {news &&
+          news.hits.map((hit) => (
+            <li>
+              
+                {hit.title && (
+                  <a href={hit.url} dangerouslySetInnerHTML={{__html: highlight(hit.title, query)}} />
                 )}
-            </ol>
+          
+              <p>
+                {hit.points} Points by {hit.author} {hit.created_at}
+              </p>
+            </li>
+          ))}
+      </ol>
+    </div>
+  );
+};
 
-        </div>
-    ) 
-}
-
-export default List
-
+export default List;
