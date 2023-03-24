@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
+
 import List from "./List";
 
-const Api = ({news, setNews}) => {
+const Api = ({news, setNews,setIsLoading,isLoading}) => {
 
-    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     console.log(news)
@@ -13,6 +13,10 @@ const Api = ({news, setNews}) => {
          fetch("http://hn.algolia.com/api/v1/search?query=foo&tags=story")
            .then((response) => response.json())
            .then((json) => {
+            setTimeout(() => {
+              setIsLoading(false)
+          }, isLoading)
+      
              console.log(json);
              setNews(json);
            })
@@ -22,7 +26,7 @@ const Api = ({news, setNews}) => {
 
   return (
   <div>
-   
+     
   </div>
   );
 }
