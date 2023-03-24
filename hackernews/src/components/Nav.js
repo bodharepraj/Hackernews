@@ -1,12 +1,20 @@
 import React from 'react';
 
 const Nav = () => {
-
-
-
-    return <div>This is the nav bar</div>
-
-    
-}
+ return (
+        <nav>
+          <ul className="list">
+              <li className="items">New</li>
+              <li className="items">Paste</li>
+              <li className="items">Comment</li>
+              <li className="items">Ask</li>
+              <li className="items">Show</li>
+              <li className="items">Job</li>
+              <li className="items">Submit</li>
+            </ul>
+          <button className="btn">BTN</button>
+        </nav>
+      )
+    }
 
 export default Nav
