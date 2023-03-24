@@ -8,7 +8,7 @@
 .list{
   background-color: #f6f6ef;
   display: flex;
-  
+margin:0 auto;  
 }
 
 ol {
@@ -29,6 +29,12 @@ ol li p {
 
 }
 
+.isLoading {
+  align-items: center;
+}
 
 
+.colorOf{
+  background:yellow;
+}
 

@@ -28,7 +28,6 @@ function Footer({news, setNews, query,setQuery}) {
 
   return (
     <section className="footer">
-      <h1>News Articles</h1>
       <form onSubmit={handleChange}>
         <label>
           <strong>Search</strong>
