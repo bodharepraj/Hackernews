@@ -2,7 +2,7 @@ import React from "react";
 import '../index.css';
 
 
-const List = ({news, query, matchExactly, setMatchExactly}) => {
+const List = ({news, query}) => {
   const startTime = new Date().getTime();
   console.log(query);
 
