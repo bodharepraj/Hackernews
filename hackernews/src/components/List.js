@@ -4,19 +4,18 @@ import '../index.css';
 
 
 const List = ({news, query}) => {
+  
 
     const startTime = new Date().getTime();
 console.log(query);
     return(
         <div className="list">
             <ol>
-                {news && news.hits.map(
-                hit =>  <li>
-
-                          <a  href={hit.url} >  {hit.title}</a>
+                {news && news.hits.map( (hit, index) =>  
+                        <li>
+                          <a  href={hit.url} > {index + 1} {hit.title}</a>
                              {/* <p>{hit.url}</p> */}
-                            <p>{hit.points} Points by {hit.author} {hit.created_at} </p>
-
+                            <p>{hit.points} Points by {hit.author} </p>
                         </li>
                 )}
             </ol>
