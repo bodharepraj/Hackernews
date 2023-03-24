@@ -8,14 +8,15 @@ function App() {
 
   
   const [news, setNews] = useState();
-  
+  const [query, setQuery] = useState();
+
   return (
     <div className="App">
       <Nav/>
-      <List news={news}/>
-      
+      <Footer news={news} setNews={setNews}  query={query} setQuery={setQuery}/>
+
+      <List news={news} query={query}/>
       <Api news={news} setNews={setNews} />
-      <Footer news={news} setNews={setNews} />
 
     </div>
   );

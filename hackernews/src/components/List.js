@@ -3,7 +3,7 @@ import '../index.css';
 
 
 
-const List = ({news}) => {
+const List = ({news, query}) => {
 
     const startTime = new Date().getTime();
 
