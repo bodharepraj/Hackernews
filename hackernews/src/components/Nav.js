@@ -3,7 +3,7 @@ import React from 'react';
 const Nav = () => {
  return (
         <nav>
-          <ul className="list">
+          <ul className="listNav">
               <li className="items">New</li>
               <li className="items">Paste</li>
               <li className="items">Comment</li>

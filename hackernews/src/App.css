@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;
   display: flex;
@@ -29,14 +31,14 @@ ol li p {
 
 }
 nav {
-  position: fixed;
+  display:flex;
   top: 0;
-  width: 100%;
+  margin: 0 auto; 
   height: 50px;
   background: linear-gradient(45deg, rgb(156, 14, 156), midnightblue);
 }
 
-.list {
+.listNav {
   list-style-type: none;
   background: linear-gradient(45deg, rgb(156, 14, 156), midnightblue);
   height: 100%;
@@ -44,6 +46,7 @@ nav {
   justify-content: center;
   align-items: center;
   position: relative;
+  margin:0 auto;
 }
 .items {
   margin-right: 20px;
