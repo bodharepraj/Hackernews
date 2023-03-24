@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 import List from "./List";
 
-const Api = ({news, setNews,setIsLoading,isLoading}) => {
+const Api = ({news, setNews,setIsLoading,isLoading, setTimeStamp}) => {
 
     const [error, setError] = useState(null);
 
@@ -16,13 +16,24 @@ const Api = ({news, setNews,setIsLoading,isLoading}) => {
             setTimeout(() => {
               setIsLoading(false)
           }, isLoading)
-      
+
              console.log(json);
              setNews(json);
            })
            .catch((error) => console.log(error));
-    
       }, []);
+
+
+      useEffect(() => {
+         
+        fetch("http://hn.algolia.com/api/v1/search?query=foo&tags=story")
+          .then((response) => response.json())
+          .then((json) => {
+
+            setTimeStamp(json);
+          })
+          .catch((error) => console.log(error));
+     }, []);
 
   return (
   <div>

@@ -12,6 +12,7 @@ function App() {
   const[isLoading,setIsLoading]=useState(true);
   const [news, setNews] = useState();
   const [query, setQuery] = useState();
+  
 
   
   return (
@@ -19,13 +20,14 @@ function App() {
       <Nav/>
       <div className="isLoading"> 
       {isLoading && 
-            <CircularProgress color="secondary" />}
+            <CircularProgress color="secondary" /> 
               
             {!isLoading }
              </div>
       
       <List news={news} query={query} />
       <Api news={news} setNews={setNews} setIsLoading={setIsLoading}/>
+
       <Footer news={news} setNews={setNews}  query={query} setQuery={setQuery}/>
       
 

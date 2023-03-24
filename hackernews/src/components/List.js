@@ -1,6 +1,7 @@
 import React from "react";
 import '../index.css';
 
+
 const List = ({news, query, matchExactly, setMatchExactly}) => {
   const startTime = new Date().getTime();
   console.log(query);
@@ -20,6 +21,7 @@ const List = ({news, query, matchExactly, setMatchExactly}) => {
               
                 {hit.title && (
                   <a href={hit.url} dangerouslySetInnerHTML={{__html: highlight(hit.title, query)}} />
+
                 )}
           
               <p>
