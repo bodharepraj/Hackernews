@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const List = ({news}) => {
+const List = ({news, query}) => {
 
     return(
         <div>
