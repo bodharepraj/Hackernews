@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 function Footer({news, setNews, query,setQuery}) {
   // const [news, setNews] = useState([]);
   const [error, setError] = useState(null);
-console.log(news)
   useEffect(() => {
     const fetchArticles = async () => {
       try {
@@ -21,7 +20,7 @@ console.log(news)
       fetchArticles();
     }
   }, [query]);
-    console.log(news)
+  
   const handleChange = (e) => {
     e.preventDefault();
     setQuery(e.target.value);
