@@ -16,7 +16,7 @@ function App() {
   
   return (
     <div className="App">
-      <Nav/>
+      <Nav setNews={setNews}/>
       <div className="isLoading"> 
       {isLoading && 
             <CircularProgress color="secondary" />}

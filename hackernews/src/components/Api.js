@@ -23,18 +23,6 @@ const Api = ({news, setNews,setIsLoading,isLoading, setTimeStamp}) => {
            .catch((error) => console.log(error));
       }, []);
 
-
-      useEffect(() => {
-         
-        fetch("http://hn.algolia.com/api/v1/search?query=foo&tags=story")
-          .then((response) => response.json())
-          .then((json) => {
-
-            setTimeStamp(json);
-          })
-          .catch((error) => console.log(error));
-     }, []);
-
   return (
   <div>
      

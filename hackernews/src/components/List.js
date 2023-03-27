@@ -2,9 +2,19 @@ import React from "react";
 import '../index.css';
 
 
-const List = ({news, query, matchExactly, setMatchExactly}) => {
-  const startTime = new Date().getTime();
-  console.log(query);
+const List = ({news, query}) => {
+
+    const printDate = (a) => {
+    const date1 = new Date(a).getDate();
+    const date2 = new Date();
+    const diffTime = Math.abs(date2 - date1);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+    //console.log(diffTime + " milliseconds");
+    //console.log(diffDays + " days");
+    return diffDays + " days ago  |"
+}
+
+
 
   const highlight = (text, query) => {
     if (!text) return "";
@@ -25,7 +35,7 @@ const List = ({news, query, matchExactly, setMatchExactly}) => {
                 )}
               </div>
               <p>
-                {hit.points} Points by {hit.author} {hit.created_at}
+                {hit.points} Points by {hit.author} {printDate(hit.created_at)}
               </p>
             </li>
           ))}
